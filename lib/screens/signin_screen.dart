@@ -119,9 +119,6 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 }
 
-// ===============================
-// Sign Up Screen
-// ===============================
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
 

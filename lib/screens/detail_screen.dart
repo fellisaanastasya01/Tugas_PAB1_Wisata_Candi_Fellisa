@@ -1,4 +1,3 @@
-// screens/detail_screen.dart
 import 'package:flutter/material.dart';
 import '/models/candi.dart';
 import '/widgets/detail_gallery.dart';

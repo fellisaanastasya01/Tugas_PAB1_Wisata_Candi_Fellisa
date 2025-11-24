@@ -37,7 +37,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(
               children: [
-                // Header
                 Padding(
                   padding: const EdgeInsets.only(top: 150),
                   child: Align(
