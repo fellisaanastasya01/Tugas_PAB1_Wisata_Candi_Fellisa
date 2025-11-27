@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/models/candi.dart';
+import 'package:wisata_candi/models/candi.dart';
 
 class DetailInfo extends StatelessWidget {
   final Candi candi;

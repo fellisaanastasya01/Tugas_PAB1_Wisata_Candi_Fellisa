@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfileInfoItem extends StatelessWidget {
+  const ProfileInfoItem({super.key, required this.icon, required this.label, required this.value, this.showEditIcon = false, this.onEditPressed, required this.iconColor});
   final IconData icon;
   final String label;
   final String value;
@@ -8,55 +10,28 @@ class ProfileInfoItem extends StatelessWidget {
   final VoidCallback? onEditPressed;
   final Color iconColor;
 
-  const ProfileInfoItem({
-    Key? key,
-    required this.icon,
-    required this.label,
-    required this.value,
-    this.showEditIcon = false,
-    this.onEditPressed,
-    required this.iconColor, required TextStyle style,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    final TextStyle labelStyle =
-        Theme.of(context).textTheme.bodyMedium ?? const TextStyle();
-    final TextStyle valueStyle =
-        Theme.of(context).textTheme.bodyMedium ?? const TextStyle();
-
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width / 3,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(icon, color: iconColor),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(label, style: labelStyle),
-              ),
+              Icon(icon, color: iconColor), //Gunakan variabel warna ikon
+              SizedBox(width: 8),
+              Text(
+                label,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ), //Text
             ],
-          ),
-        ),
+          ), //Row
+        ), //SizedBox
         Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                child: Text(value, style: valueStyle),
-              ),
-              if (showEditIcon)
-                IconButton(
-                  icon: const Icon(Icons.edit),
-                  onPressed: onEditPressed,
-                ),
-            ],
-          ),
-        ),
+          child: Text(': $value', style: TextStyle(fontSize: 18)),
+        ), //Expanded
+        if (showEditIcon) InkWell(onTap: onEditPressed, child: Icon(Icons.edit)),
       ],
-    );
+    ); //Row
   }
 }

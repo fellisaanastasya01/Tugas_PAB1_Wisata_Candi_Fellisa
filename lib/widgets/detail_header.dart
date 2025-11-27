@@ -19,8 +19,8 @@ class DetailHeader extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.network(imageUrl, fit: BoxFit.cover),
-          ),
-        ),
+          ), //ClipRRect
+        ), //Pading
         Positioned(
           top: 40,
           left: 20,
@@ -29,10 +29,10 @@ class DetailHeader extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.deepPurple),
               onPressed: onBackPressed,
-            ),
-          ),
-        ),
+            ), //IconButton
+          ), //CircleAvatar
+        ), //Positioned
       ],
-    );
+    ); //Stack
   }
 }
